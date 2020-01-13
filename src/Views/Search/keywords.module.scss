@@ -1,0 +1,22 @@
+.header{
+    width:100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    .nav{
+        height: .43rem;
+        display: flex;
+        background-color: #fff;
+        margin-top: -.1rem;
+        .list{
+            flex: 1;
+            font-size: .12rem;
+            color: #43240c;
+            text-align: center;
+            line-height: .43rem;
+        }
+        .active{
+            color: #fa585a;
+        }
+    }
+}

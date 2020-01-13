@@ -1,0 +1,31 @@
+.choose{
+    margin-left: .2rem;
+    height: .38rem;
+    line-height: .38rem;
+    width:70%;
+    overflow: hidden;
+    float: right;
+    .swiper-slide{
+        display: inline-block;
+        width: auto!important;
+        font-size: .15rem;
+        text-align: center;
+        color:#6b4c10;
+    }
+    .active{ 
+        border-top:.05rem solid hotpink;
+    }
+}
+.banner{
+    height: 1.4rem;
+    .swiper-slide{
+        height: 80%;
+    }
+    .swiper-pagination{
+        bottom:-.2rem
+    }
+}
+.top{
+    height: 100%;
+}
+

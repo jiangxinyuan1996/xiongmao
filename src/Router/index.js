@@ -7,19 +7,30 @@ import {
 } from 'react-router-dom'
 import App from '../App'
 import Home from '../Views/Home/home'
-
-
-
-const router = <HashRouter>
-    <App>
-        <Switch>
-        <Route path="/" render={()=>
-            <Home>
-            </Home>
-        }></Route>
-        <Redirect from="/" to="/" exact></Redirect>
-        <Redirect to="/error"></Redirect>
-        </Switch>
-    </App>
-</HashRouter>
+import Error from '../Views/Error/error'
+import Search from '../Views/Search/search'
+import Column from '../Views/Column/column'
+import keywordsSearch from '../Views/Search/keywordsSearch'
+import {Provider} from 'react-redux'
+import store from '../Redux/store'
+const router = (
+<Provider store={store}>
+    <HashRouter>
+        <App>
+            <Switch>
+            <Route path="/home" render={()=>
+                <Home>
+                </Home>
+            }></Route>
+            <Route path="/column/:id" component={Column} exact></Route>
+            <Route path="/search" component={Search} exact></Route>
+            <Route path="/s/:keyword" component={keywordsSearch} exact></Route>
+            <Route path="/error" component={Error} exact></Route>
+            <Redirect from="/" to="/home" exact></Redirect>
+            <Redirect to="/error"></Redirect>
+            </Switch>
+        </App>
+    </HashRouter>
+</Provider>
+)
 export default router

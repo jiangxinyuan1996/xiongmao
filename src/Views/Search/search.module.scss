@@ -1,0 +1,45 @@
+.wrap{
+    background-color: #fff;
+    height:7rem;
+    overflow: hidden;
+}
+.hot{
+    margin:0 .2rem;
+    overflow: hidden;
+    .title{
+        font-weight: normal;
+        font-size: .15rem;
+        margin:.2rem .2rem .15rem 0;
+    }
+    .hotwords{
+        font-size: .15rem;
+        text-align: center;
+        float: left;
+        color: #43240c;
+        background-color: #f5f5f5;
+        padding: .0375rem .1125rem;
+        box-sizing: border-box;
+        display:block;
+        margin: 0 .11rem .15rem 0;
+        border-radius: .2rem;
+        background-color: #f5f5f5;
+    }
+    .highlight{
+        color: #fa585a;
+    }
+}
+.category{
+    margin:0 .2rem;
+    .title{
+        font-weight: normal;
+        font-size: .15rem;
+        margin:.2rem .2rem .15rem 0;
+    }
+    .goods{
+        width:25%;
+        font-size: .15rem;
+        float: left;
+        text-align: center;
+        margin-bottom: .2rem;
+    }
+}
