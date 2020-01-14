@@ -13,6 +13,9 @@ import Column from '../Views/Column/column'
 import keywordsSearch from '../Views/Search/keywordsSearch'
 import {Provider} from 'react-redux'
 import store from '../Redux/store'
+import Detail from '../Views/Detail/detail'
+import Bige from '../Views/Bige/bige'
+
 const router = (
 <Provider store={store}>
     <HashRouter>
@@ -22,6 +25,8 @@ const router = (
                 <Home>
                 </Home>
             }></Route>
+            <Route path="/bige" component={Bige} exact></Route>
+            <Route path="/c" component={Detail} exact></Route>
             <Route path="/column/:id" component={Column} exact></Route>
             <Route path="/search" component={Search} exact></Route>
             <Route path="/s/:keyword" component={keywordsSearch} exact></Route>

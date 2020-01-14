@@ -4,6 +4,7 @@ import style from './bige.module.scss'
 import { PullToRefresh } from 'antd-mobile';
 import 'antd-mobile/lib/date-picker/style/css'; 
 
+
 export default class bige extends Component {
     state = {
         datalist: [],
@@ -19,8 +20,7 @@ export default class bige extends Component {
                     damping={60}
                     // ref={el => this.ptr = el}
                     style={{
-
-                          height: this.state.height,
+                        height: this.state.height,
                         overflow: 'auto',
                     }}
                     // indicator={this.state.down ? {} : { deactivate: '上拉可以刷新' }}
@@ -32,11 +32,11 @@ export default class bige extends Component {
                 <ul>{
                     this.state.datalist.map((item,index) =>
                         <li key={index} onClick={() => this.handleClick(item.id)}>
-                            <img src={item.image}></img>
+                            <img src={item.image} alt=""></img>
                             <div className={style.wrap}>
                                 <h3>{item.title}</h3>
                                 <div className={style.middle}>
-                                    {item.platform == 1 ? <span className={style.platform}>淘宝</span> : <span className={style.platform + " " + style.miao}>天猫</span>}
+                                    {item.platform === 1 ? <span className={style.platform}>淘宝</span> : <span className={style.platform + " " + style.miao}>天猫</span>}
                                     <span className={style.big}>{item.keywords ? item.keywords.reverse().slice(0, 1) : ''}</span>
                                     <span className={style.by}>包邮</span>
                                 </div>

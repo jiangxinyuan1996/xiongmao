@@ -1,0 +1,104 @@
+.listwrap{
+    width:100%;
+    margin-top: .1rem;
+    ul.list{
+        width:100%;
+        overflow: hidden;
+        font-size: .12rem;
+        li{
+            float: left;
+            width:49%;
+            height: 2.77rem;
+            background-color: white;
+            padding-right: .03rem;
+            margin-bottom: .06rem;
+            display: flex;
+            flex-direction: column;
+            &:nth-child(2n){
+                padding-right: 0;
+                padding-left: .03rem;
+            }
+            .box1{
+                flex: 2;
+            }
+            .box2{
+                flex:1;
+                padding:.09rem .1rem;
+                .title{
+                    width:90;
+                    overflow: hidden;
+                    font-size: .12rem;
+                    line-height: .12rem;
+                    text-overflow: ellipsis;
+                    color: #877a73;
+                    font-weight: normal;
+                    white-space: nowrap;
+                }
+                .text{
+                    margin-top: .048rem;
+                    justify-content: space-between;
+                    display: flex;
+                    span{
+                        &:nth-of-type(1){
+                            font-size: .1rem;
+                            display: inline-block;
+                            border-radius: .005rem;
+                            color: white;
+                            background-color: #DF2B2F;
+                            padding: .02rem .02rem 0;
+                            border-radius: .03rem;
+                        }
+                        &:nth-of-type(2){
+                            color:#877a73;
+                        }
+                    }
+                    }
+                }
+                .price{
+                    display: flex;
+                    justify-content: space-between;
+                    height: .24rem;
+                    margin-top: .04rem;
+                    align-items: flex-end;
+                        h6{
+                            display:flex;
+                            align-items: flex-end;
+                            font-weight: normal;
+                            span{
+                                &:nth-child(1){   
+                                    color: #fa585a;
+                                    font-size: .16rem;
+                                    float: left;
+                                    }
+                                }
+                            .bought{
+                                font-size: .1rem;
+                                float: right;
+                                color: #877a73;
+                                height: .256rem;
+                                margin-left: .1rem;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-end;
+                            }
+                        }
+                        .quan{
+                            color: #fa585a;
+                            height:.14rem;    
+                            line-height: .14rem;
+                            font-size: .1rem;
+                            box-shadow: inset 0 0 0 0.01rem #fa585a;
+                            box-sizing: border-box;
+                            padding:0 .01rem;
+                        }
+                }
+            }
+            .card{
+                flex: 1;
+                height: 100%;
+                img{
+                    height: 100%;
+                }
+            }
+        }
+    }

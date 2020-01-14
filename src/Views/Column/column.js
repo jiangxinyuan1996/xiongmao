@@ -3,10 +3,12 @@ import Tabbar from '../../Components/Tabbar/tabbar'
 import {connect} from 'react-redux'
 import {showAction,hideAction} from '../../Redux/Actions/tabAction'
 import style from './column.module.scss'
+import ColumnList from './columnlist'
 import Axios from 'axios'
  class column extends Component {
      state={
-         cover:''
+         cover:'',
+         columnlist:[]
      }
     render() {
         return (
@@ -16,6 +18,10 @@ import Axios from 'axios'
                     this.state.cover?
                     <div className={style.banner}><img src={this.state.cover} alt=""></img></div>:null
                 }
+                {
+                    this.state.columnlist.length?
+                    <ColumnList item={this.state.columnlist}></ColumnList>:null
+                }
             </div>
         )
     }
@@ -24,11 +30,17 @@ import Axios from 'axios'
     }
     componentDidMount(){
         this.props.hideAction()
-        Axios.get("http://www.xiongmaoyouxuan.com/api/column/5432").then(res=>{
+        Axios.get(`http://www.xiongmaoyouxuan.com/api/column/${this.props.match.params.id}`).then(res=>{
             this.setState({
                 cover:res.data.data.cover
             })
         })
+        Axios.get(`http://www.xiongmaoyouxuan.com/api/column/${this.props.match.params.id}/items?start=0`).then(res=>{
+            this.setState({
+                columnlist:res.data.data.list
+            })
+        })
+        
     }
 }
 const mapStateToProp = null

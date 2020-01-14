@@ -38,7 +38,7 @@ class tabbar extends Component {
                 } swipername="choose">
                     {
                                 this.state.looplist.map((item,index)=>
-                                <div key={index} className={(parseInt(this.state.current)===item.id)&&(this.props.match.path!=='/column')?'swiper-slide select active':'swiper-slide select'} onClick={()=>this.handleClick(item.id)}>
+                                <div key={index} className={(parseInt(this.state.current)===item.id)&&(this.props.match.path!=='/column/:id')?'swiper-slide select active':'swiper-slide select'} onClick={()=>this.handleClick(item.id)}>
                                     <Link to={'/home/tab/'+item.id}>{item.name}</Link>
                                 </div>
                                 )
@@ -70,6 +70,7 @@ class tabbar extends Component {
         }
     }
     componentDidMount(){
+        console.log(this.props)
         window.addEventListener('scroll', this.bindHandleScroll.bind(this))
         Axios.get("http://www.xiongmaoyouxuan.com/api/tabs?sa=").then(res=>{
           this.setState({

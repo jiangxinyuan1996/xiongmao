@@ -1,10 +1,10 @@
-body,p,h1,h2,h4,h5,h6,h3,ul,ol,dl,td,dd,input,textarea,option,hr,button,fieldset,legend,figure{margin:0; padding:0;}
+ body,p,h1,h2,h4,h5,h6,h3,ul,ol,dl,td,dd,input,textarea,option,hr,button,fieldset,legend,figure{margin:0; padding:0;}
 a{text-decoration: none; color: #666;}
 a:link{color: #666;}
 a:hover{color: #333;}
 li{list-style: none;}
 body{font:14px "微软雅黑";}
-img{vertical-align: top;/*display:block;*/ border: none;}
+img{vertical-align: top; border: none;}
 input,area{outline:none;}
 i,em{font-style: normal;}
 h1,h2,h4,h5,h6,h3,b,strong{font-weight: normal;}

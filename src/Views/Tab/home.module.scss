@@ -79,6 +79,7 @@ img{
             img{
                 width: .24rem;
                 height: .61rem;
+                margin-top:.3rem;
             }
         }
         .more{
@@ -124,8 +125,12 @@ img{
             }
             .toptitle{
                 margin-top: .04rem;
+                // width:80%;
                 flex: 1;
                 line-height: .2rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
             .topinfo{
                 flex:1;
@@ -179,6 +184,9 @@ img{
             }
             .box1{
                 flex: 2;
+                img{
+                    height: 100%;
+                }
             }
             .box2{
                 flex:1;

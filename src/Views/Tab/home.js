@@ -131,7 +131,7 @@ class home extends Component {
                                     </div>
                                 </div>
                             </li>:
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>this.handleDump(item.url)}>
                                 <div className={style.card}>
                                     <img src={item.image} alt=""></img>
                                 </div>
@@ -145,10 +145,12 @@ class home extends Component {
         )
     }
     handleClick(index,id){
-        console.log(id.slice(-4))
        if(index===2){
            this.props.history.push('/column/'+id.slice(-4))
        }
+    }
+    handleDump(id){
+        this.props.history.push('/column/'+id.slice(20,24))
     }
     componentDidMount() {
         axios.get("http://www.xiongmaoyouxuan.com/api/tab/1?start=0").then(res=>{
