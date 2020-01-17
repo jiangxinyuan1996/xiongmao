@@ -20,6 +20,10 @@
             }
             .box1{
                 flex: 2;
+                height:1.84rem;
+                img{
+                    height: 100%;
+                }
             }
             .box2{
                 flex:1;
@@ -38,6 +42,7 @@
                     margin-top: .048rem;
                     justify-content: space-between;
                     display: flex;
+                    position: relative;
                     span{
                         &:nth-of-type(1){
                             font-size: .1rem;

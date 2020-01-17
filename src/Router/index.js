@@ -11,10 +11,11 @@ import Error from '../Views/Error/error'
 import Search from '../Views/Search/search'
 import Column from '../Views/Column/column'
 import keywordsSearch from '../Views/Search/keywordsSearch'
+import Detail from '../Views/Detail/detail'
 import {Provider} from 'react-redux'
 import store from '../Redux/store'
-import Detail from '../Views/Detail/detail'
-import Bige from '../Views/Bige/bige'
+import Category from '../Views/Category/category'
+import SubColumn from '../Views/SubColumn/subColumn'
 
 const router = (
 <Provider store={store}>
@@ -25,8 +26,9 @@ const router = (
                 <Home>
                 </Home>
             }></Route>
-            <Route path="/bige" component={Bige} exact></Route>
-            <Route path="/c" component={Detail} exact></Route>
+            <Route path="/category/:id" component={Category} exact></Route>
+            <Route path="/column/:id/subColumn/:sid" component={SubColumn} exact></Route>
+            <Route path="/c/:id" component={Detail} exact></Route>
             <Route path="/column/:id" component={Column} exact></Route>
             <Route path="/search" component={Search} exact></Route>
             <Route path="/s/:keyword" component={keywordsSearch} exact></Route>

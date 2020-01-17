@@ -3,8 +3,10 @@ import Swiper from '../../Components/DetailSwiper/detailswiper.js'
 import axios from 'axios'
 import style from './detail.module.scss'
 import { BackTop } from 'antd';
+import {connect} from 'react-redux'
+import {showAction,hideAction} from '../../Redux/Actions/tabAction'
 // import { PullToRefresh } from 'antd-mobile';
-export default class detail extends Component {
+class detail extends Component {
     state = {
         swiperlist: [],
         datalist: {},
@@ -23,7 +25,7 @@ export default class detail extends Component {
     
 
  
-            <div className={style.back} onClick={this.handleClick}>&lt;</div>
+            <div className={style.back} onClick={this.handleClick}></div>
                 <Swiper key={this.state.swiperlist.length}>
                     {
                         this.state.swiperlist.map(item =>
@@ -88,10 +90,8 @@ export default class detail extends Component {
         window.history.back(-1)
     }
     componentDidMount() {
-        // console.log(this.props)
-        axios.get(`http://www.xiongmaoyouxuan.com/api/detail?id=17491178&normal=1&sa=`).then(res => {
-
-            //   console.log(res.data.data.detail)
+        this.props.hideAction()
+        axios.get(`http://www.xiongmaoyouxuan.com/api/detail?id=${this.props.match.params.id}&normal=1&sa=`).then(res => {
             this.setState({
                 swiperlist: res.data.data.detail.photo,
                 datalist: res.data.data.detail,
@@ -99,8 +99,15 @@ export default class detail extends Component {
                 photolist: res.data.data.detail.descContentList,
                 couponValue: res.data.data.detail.couponValue
             })
-            console.log(this.state.datalist,222222)
-            console.log(this.state.photolist)
         })
     }
+    componentWillUnmount(){
+        this.props.showAction()
+    }
 }
+const mapStateToProp = null
+const mapDispatchToProps = {
+    showAction,
+    hideAction
+}
+export default connect(mapStateToProp,mapDispatchToProps)(detail)

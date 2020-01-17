@@ -16,7 +16,7 @@ class search extends Component {
     render() {
         return (
             <div className={style.wrap}>
-                <Search keyword={this.state.keyword}></Search>
+                <Search keyword={this.state.keyword} searchname={true}></Search>
                 {
                         this.state.hotlist.length?
                 <div className={style.hot}>

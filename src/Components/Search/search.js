@@ -10,9 +10,13 @@ import { withRouter } from 'react-router-dom'
                         this.props.searchname?
                         <span className={style.goback} onClick={()=>this.handleDump()}>返回</span>:null
                     }
-                    <input className={style.input} type="text" placeholder="搜索商品, 发现更多优选" onClick={()=>this.handleClick()} ref="inputValue"></input>
                     {
-                        this.props.searchname?
+                        this.props.input===undefined?
+                        <input className={style.input} type="text" placeholder="搜索商品, 发现更多优选" onClick={()=>this.handleClick()} ref="inputValue"></input>
+                        :<h3 style={{width:'84%',textAlign:'center',paddingRight:'.3rem',boxSizing:'border-box'}}>{this.props.name}</h3>
+                    }
+                    {
+                        this.props.searchname&&this.props.input===undefined?
                         <span className={style.search} onClick={()=>this.handleSearch(this.refs.inputValue.value)}>搜索</span>:null
                     }
                 </div>

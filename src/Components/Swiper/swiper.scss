@@ -22,10 +22,28 @@
         height: 80%;
     }
     .swiper-pagination{
-        bottom:-.2rem
+        bottom:.05rem
     }
 }
 .top{
     height: 100%;
+}
+.allshow{
+    margin-left: .2rem;
+    height: .38rem;
+    line-height: .38rem;
+    width:90%;
+    overflow: hidden;
+    // float: right;
+    .swiper-slide{
+        display: inline-block;
+        width: auto!important;
+        font-size: .15rem;
+        text-align: center;
+        color:#6b4c10;
+    }
+    .active{ 
+        border-top:.05rem solid hotpink;
+    }
 }
 
